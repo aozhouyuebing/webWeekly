@@ -8,4 +8,4 @@ Friday fighting
 4 js就写在对应html的<script></script>中就好  
 5 大家这一周的任务就是先确定好要做什么，然后每个人实现哪部分的页面
 6全员收到：
-    zqf收到
+    zqf收到速达
