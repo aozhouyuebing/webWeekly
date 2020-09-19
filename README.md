@@ -10,3 +10,4 @@ Friday fighting
 6全员收到：
     zqf收到
     xeq收到
+    why收到
