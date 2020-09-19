@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="witdh='device-witdh,initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css" />
+    <title>Lpink</title>
+</head>
+
+<body>
+    <nav class="nav">
+        <a href=""><b onclick="()=>{sessionStorage.clear()}">主页</b></a>
+        <a href="https://www.mylcz.top"><b>相关连接</b></a>
+        <a href="#"><b onclick="a()">注册</b></a>
+        <a href="#"><b onclick="b()">登陆</b></a>
+    </nav>
+    <dialog id='dialog1' style="display: none" >
+        <form>
+            <p>用户名：<input type="text" id="create_name" /></p>
+            <p>密&nbsp;&nbsp;码&nbsp;&nbsp;：<input type="text" id="create_author" /></p>
+            <p>年龄层：<select id="create_type">
+                <option  value ="14<">14岁<</option>
+                <option value ="14~18">14~18岁</option>
+                <option value ="18~22" selected="selected">18~22岁</option>
+                <option value =">22">>22岁</option>
+            </select>
+            </p>
+            <div style="float: right;">
+                <button onclick="c()">取消</button>
+                <button>提交</button>
+            </div>
+        </form>
+    </dialog>
+    <dialog id='dialog2' style="display: none" >
+        <form>
+            <p>用户名：<input type="text"/></p>
+            <p>密&nbsp;&nbsp;码&nbsp;&nbsp;：<input type="text"/></p>
+            <div style="float: right;">
+                <button onclick="c()">取消</button>
+                <button>提交</button>
+            </div>
+        </form>
+    </dialog>
+    <aside class="aside">
+        <div id="jquery-accordion-menu" class="jquery-accordion-menu red">
+            <div class="jquery-accordion-menu-header" id="form">
+                功能再想想
+            </div>
+            <ul id="demo-list">
+                <li class="active"><a href="#"><i class="fa fa-home"></i>主页 </a></li>
+                <li><a href="#"><i class="fa fa-file-image-o"></i>心情贴 </a></li>
+                <li><a href="#"><i class="fa fa-tag"></i>借物帖 </a></li>
+                <li><a href="#"><i class="fa fa-bars"></i>租借汇总 </a></li>
+                <li><a href="#"><i class="fa fa fa-female"></i>租借女友 <span class="jquery-accordion-menu-label">
+				 ・ω・</span></a></li>
+                <li><a href="#"><i class="fa fa-user"></i>用户信息 </a></li>
+                <li><a href="#"><i class="fa fa-envelope"></i>收件箱 </a></li>
+                <li><a href="#"><i class="fa fa-cog"></i>系统设置 </a></li>
+            </ul>
+        </div>
+    </aside>
+    <main></main>
+    <footer class="footer">
+        <p>
+            小组成员：竺雨石 &nbsp; &nbsp;邹秦峰&nbsp; &nbsp;夏尔泉&nbsp; &nbsp;<br/>
+            王昊阳&nbsp; &nbsp;严巍&nbsp; &nbsp;刘嘉龙&nbsp; &nbsp;胡天力&nbsp; &nbsp;么逸璐
+        </p>
+    </footer>
+<script src="js/index.js"></script>
+<script src="js/jquery-3.4.1.min.js"></script>
+</body>
+
+<script>
+    function a(){
+        $('#dialog1').css('display','inline')
+    }
+    function b(){
+        $('#dialog2').css('display','inline')
+    }
+    function c(){
+        $('dialog').css('display','none')
+    }
+</script>
+
+</html>
