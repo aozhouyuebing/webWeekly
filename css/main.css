@@ -9,6 +9,11 @@ body{
     width: 100%;
     height: 100%;
 }
+main{
+    float: right;
+    width: 80%;
+    height: 80%;
+}
 .nav{
     margin: 0 auto;
     height: 2.5rem;
@@ -337,4 +342,67 @@ body{
 
 .black.jquery-accordion-menu ul ul.submenu li:hover>a {
     border-left-color: #222
+}
+
+.image{
+    list-style: none;
+}
+
+.box{
+    width: 80%;
+    height: 200px;
+    position: relative;
+    margin:20px 120px;
+}
+.image li{
+    padding-left: 5%;
+    float: left;
+    position: absolute;
+    display: none;
+}
+
+.image img{
+    width: 700px;
+    height: 437.5px;
+}
+.num{
+    position: absolute;
+    list-style: none;
+    cursor: pointer;
+    bottom: -250px;
+    left: 250px;
+}
+.num li{
+    float: left;
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background-color: gray;
+    margin: 6px 10px;
+    text-align: center;
+    line-height: 20px;
+}
+.num .current{
+    background-color: red;
+}
+.arrow{
+    height: 60px;
+    width: 60px;
+    position: absolute;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    opacity: 0.5;
+    font-size: 20px;
+    text-align: center;
+    line-height: 60px;
+    top: 197px;
+    display: none;
+}
+.left{
+    left: 0;
+}
+.right{
+    right: 0;
 }
