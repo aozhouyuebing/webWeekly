@@ -7,51 +7,51 @@
     <link rel="stylesheet" type="text/css" href="../css/font-awesome.css" />
     <link rel="stylesheet" type="text/css" href="../css/jquery-ui.css"/>
     <style>
-        a{
-            text-decoration: none;
+        #tabs{
+            background-color:#ED5565;
+            margin-top: 20px;
+            margin-left: 20px;
         }
-        #menuBar{                                   //选择菜单栏
-            list-style-type: none;
+        #menuBar{
+            background-color:#ED5565;
+            border:0px;
         }
-        /*#menuBar li{
-            float: left;
+        li,a{
+            background-color:#ED5565;
+            font-weight: lighter;
+            border:0px;
+        }
+        #radio2{
+        }
+        .title-style{
+            margin-bottom:10px;
+            font-weight: bold;
+            color: rgba(50, 50, 50, 0.43);
+            font: bold 16px/2 Verdana, Geneva, sans-serif;
+            text-align: left;
+            text-shadow: 2px 2px 2px lightgray;
+
+        }
+        fieldset{
+            background: rgba(255,255,255,.3);
+            border-color: rgba(255,255,255,.6);
+            border-style: solid;
+            border-width: 2px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -khtml-border-radius: 5px;
+            border-radius: 5px;
+            line-height: 30px;
+            list-style: none;
+            padding: 5px 10px;
+            margin-bottom: 2px;
+        }
+        p{
             display: block;
-        } */
-        .tabs {
-            /*float:left;*/
-            width:100%;
         }
-        .tabs ul
-        {
-            list-style: none outside none;
-            margin: 0;
-            padding: 0;
-        }
-        .tabs ul li
-        {
-            float: left;
-            line-height: 24px;
-            margin: 0;
-            padding: 2px 20px 0 15px;
-        }
-        .tab-nav{
-            cursor:pointer;
-        }
-        .tab-nav-action{
-            cursor:pointer;
-        }
-        .tabs-body
-        {
-            border-bottom: 1px solid #B4C9C6;
-            border-left: 1px solid #B4C9C6;
-            border-right: 1px solid #B4C9C6;
-            /*float: left;*/
-            padding: 5px 0 0;
-            width: 100%;
-        }
-        .tabs-body div
-        {
-            padding:10px;
+
+        #sizesetting{
+            width:300px;
         }
 
     </style>
@@ -111,43 +111,46 @@
     </div>
 </aside>
 <main>
-    <div class="tabs">
+    <div id="tabs">
         <ul id = "menuBar">
-            <li class="active"><a href="#tabs-1">First</a></li>
-            <li class="tab-nav-action"><a href="#tabs-2">Second</a></li>
-            <li class="tab-nav"><a href="#tabs-3">Third</a></li>
-            <li class="tab-nav"><a href="#tabs-5">Forth</a></li>
-            <li class="tab-nav"><a href="#tabs-6">Fifth</a></li>
-            <li class="tab-nav"><a href="#tabs-7">Sixth</a></li>
-            <li class="tab-nav"><a href="#tabs-8">Seventh</a></li>
+            <li><a href="#tabs-1" style="color:lightgray">外观</a></li>
+            <li><a href="#tabs-2" style="color:lightgray">Second</a></li>
+            <li><a href="#tabs-3" style="color:lightgray">Third</a></li>
+            <li><a href="#tabs-4" style="color:lightgray">Forth</a></li>
+            <li><a href="#tabs-5" style="color:lightgray">Fifth</a></li>
+            <li><a href="#tabs-6" style="color:lightgray">Sixth</a></li>
+            <li><a href="#tabs-7" style="color:lightgray">Seventh</a></li>
         </ul>
-    </div>
-    <br>
-    <div id="tabs-body" class="tabs-body">
-        <div id="tabs-1" style="display:block">
-            1
+        <div id="tabs-1">
+            <form>
+                <div id="colorset">
+                    <fieldset id="colormatching" style="background-color: white">
+                        <legend class="title-style">配色</legend>
+                        <input type="radio" id="radio2" name="radio"><label for="radio2" style="background:lightgrey">灰色</label>
+                        <input type="radio" id="radio3" name="radio" checked="checked"><label for="radio3" style="background:#ED5565">粉色</label>
+                        <input type="radio" id="radio4" name="radio"><label for="radio4" style="background:lightgreen">绿色</label>
+                    </fieldset>
+                </div>
+                <div id="sizeset">
+                    <fieldset id="sizesetting" style="background-color: white">
+                        <legend class="title-style">字号</legend>
+                        <select id="size" style="background:#ED5565">
+                            <option>特小</option>
+                            <option>小</option>
+                            <option selected="selected" >中（推荐）</option>
+                            <option>大</option>
+                            <option>特大</option>
+                        </select>
+                    </fieldset>
+                </div>
+            </form>
         </div>
-        <div id="tabs-2" style="display:none">
-            2
-        </div>
-        <div id="tabs-3" style="display:none">
-            3
-        </div>
-        <div id="tabs-4" style="display:none">
-            4
-        </div>
-        <div id="tabs-5" style="display:none">
-            5
-        </div>
-        <div id="tabs-6" style="display:none">
-            6
-        </div>
-        <div id="tabs-7" style="display:none">
-            7
-        </div>
-        <div id="tabs-8" style="display:none">
-            8
-        </div>
+        <div id="tabs-2">2</div>
+        <div id="tabs-3">3</div>
+        <div id="tabs-4">4</div>
+        <div id="tabs-5">5</div>
+        <div id="tabs-6">6</div>
+        <div id="tabs-7">7</div>
     </div>
 </main>
 <footer class="footer">
@@ -158,16 +161,12 @@
 </footer>
 <script src="../js/index.js"></script>
 <script src="../js/jquery-3.4.1.min.js"></script>
+<script src="../js/jquery-ui.js"></script>
 <script type="text/javascript">
     $(document).ready(function(){
-        $("#menuBar li").bind("click", function () {
-            var index = $(this).index();
-            var divs = $("#tabs-body > div");
-            $(this).parent().children("li").attr("class", "tab-nav");//将所有选项置为未选中
-            $(this).attr("class", "tab-nav-action"); //设置当前选中项为选中样式
-            divs.hide();//隐藏所有选中项内容
-            divs.eq(index).show(); //显示选中项对应内容
-        });
+        $("#tabs").tabs();
+        $("#colorset").buttonset();
+        $("#size").selectmenu();
     })
 </script>
 </body>
