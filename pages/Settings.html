@@ -6,6 +6,57 @@
     <link rel="stylesheet" type="text/css" href="../css/main.css">
     <link rel="stylesheet" type="text/css" href="../css/font-awesome.css" />
     <link rel="stylesheet" type="text/css" href="../css/jquery-ui.css"/>
+    <style type="text/css">                 /*上传头像的css*/
+        .con4 {
+            width: 200px;
+            height: 300px;
+            overflow: hidden;
+            margin: 1px;
+            color: #FFFFFF;
+            align-content: center;
+            float: left;
+            display: block;
+        }
+
+        .con4 .btn {
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            background: #d8b49c;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        .upload {
+            float: left;
+            position: relative;
+        }
+
+        .upload_pic {
+            display: block;
+            width: 100%;
+            height: 40px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            border-radius: 5px;
+        }
+
+        #cvs {
+            border: 1px solid white;
+            margin: 5px 0 5px 1px;
+            float: left;
+            display: block;
+        }
+
+        .btn upload{
+            position: relative;
+            display: block;
+        }
+    </style>
+
     <style>
         #tabs{
             background-color:#ED5565;
@@ -16,7 +67,7 @@
             background-color:#ED5565;
             border:0px;
         }
-        li a{
+        .headtabs{
             background-color:#ED5565;
             font-weight: lighter;
             border:0px;
@@ -30,9 +81,8 @@
             font: bold 16px/2 Verdana, Geneva, sans-serif;
             text-align: left;
             text-shadow: 2px 2px 2px lightgray;
-
         }
-        fieldset{
+        fieldset-ui{
             background: rgba(255,255,255,.3);
             border-color: rgba(255,255,255,.6);
             border-style: solid;
@@ -46,30 +96,41 @@
             padding: 5px 10px;
             margin-bottom: 2px;
         }
-        p{
-            display: block;
-        }
+
 
         #sizesetting{
             width:300px;
         }
 
+        .baseinfo{
+            display: block;
+            color: white;
+        }
+
+        .baseinfoinput{
+            border-radius: 10px;
+            border-color: #ED5565;
+        }
+
+        #passwordset{
+            height: 100px;
+        }
     </style>
     <title>系统设置</title>
 </head>
 
 <body>
 <nav class="nav">
-    <a href="../index.html"><b onclick="()=>{sessionStorage.clear()}">主页</b></a>
+    <a href="./../index.html"><b onclick="()=>{sessionStorage.clear()}">主页</b></a>
     <a href="https://www.mylcz.top"><b>相关连接</b></a>
-    <a href="#"><b onclick="a()">注册</b></a>
-    <a href="#"><b onclick="b()">登陆</b></a>
+    <a href="#"><b class="trigger1" >注册</b></a>
+    <a href="#"><b class="trigger2">登陆</b></a>
 </nav>
-<dialog id='dialog1' style="display: none" >
+<div class="slider1">
     <form>
-        <p>用户名：<input type="text" id="create_name" /></p>
-        <p>密&nbsp;&nbsp;码&nbsp;&nbsp;：<input type="text" id="create_author" /></p>
-        <p>年龄层：<select id="create_type">
+        <p>用户名：<input type="text" class="gUserName" /></p>
+        <p>密&nbsp;&nbsp;码&nbsp;&nbsp;：<input type="text" class="gPassWord" /></p>
+        <p>年龄层：<select id="gAge">
             <option  value ="14<">14岁<</option>
             <option value ="14~18">14~18岁</option>
             <option value ="18~22" selected="selected">18~22岁</option>
@@ -81,17 +142,17 @@
             <button>提交</button>
         </div>
     </form>
-</dialog>
-<dialog id='dialog2' style="display: none" >
+</div>
+<div class="slider2">
     <form>
-        <p>用户名：<input type="text"/></p>
-        <p>密&nbsp;&nbsp;码&nbsp;&nbsp;：<input type="text"/></p>
+        <p>用户名：<input id="lUserName"/></p>
+        <p>密&nbsp;&nbsp;码&nbsp;&nbsp;：<input id="lPassWord"/></p>
         <div style="float: right;">
             <button onclick="c()">取消</button>
             <button>提交</button>
         </div>
     </form>
-</dialog>
+</div>
 <aside class="aside">
     <div id="jquery-accordion-menu" class="jquery-accordion-menu red">
         <div class="jquery-accordion-menu-header" id="form">
@@ -102,7 +163,7 @@
             <li><a href="#"><i class="fa fa-file-image-o"></i>心情贴 </a></li>
             <li><a href="#"><i class="fa fa-tag"></i>借物帖 </a></li>
             <li><a href="#"><i class="fa fa-bars"></i>租借汇总 </a></li>
-            <li><a href="#"><i class="fa fa-thumbs-up"></i>借物归还 </a></li>
+            <li><a href="GH.html"><i class="fa fa-thumbs-up"></i>借物归还 </a></li>
             <li><a href="#"><i class="fa fa fa-female"></i>租借女友 <span class="jquery-accordion-menu-label">・ω・</span></a></li>
             <li><a href="#"><i class="fa fa-user"></i>用户信息 </a></li>
             <li><a href="#"><i class="fa fa-envelope"></i>收件箱 </a></li>
@@ -112,26 +173,26 @@
 </aside>
 <main>
     <div id="tabs">
-        <ul id = "menuBar">
-            <li><a href="#tabs-1" style="color:lightgray">外观</a></li>
-            <li><a href="#tabs-2" style="color:lightgray">Second</a></li>
-            <li><a href="#tabs-3" style="color:lightgray">Third</a></li>
-            <li><a href="#tabs-4" style="color:lightgray">Forth</a></li>
-            <li><a href="#tabs-5" style="color:lightgray">Fifth</a></li>
-            <li><a href="#tabs-6" style="color:lightgray">Sixth</a></li>
-            <li><a href="#tabs-7" style="color:lightgray">Seventh</a></li>
+        <ul id = "menuBar">                                                 <!--设置选项-->
+            <li><a href="#tabs-1" style="color:lightgray" class="headtabs">外观</a></li>
+            <li><a href="#tabs-2" style="color:lightgray" class="headtabs">个人资料</a></li>
+            <li><a href="#tabs-3" style="color:lightgray" class="headtabs">安全</a></li>
+            <li><a href="#tabs-4" style="color:lightgray" class="headtabs">Forth</a></li>
+            <li><a href="#tabs-5" style="color:lightgray" class="headtabs">Fifth</a></li>
+            <li><a href="#tabs-6" style="color:lightgray" class="headtabs">Sixth</a></li>
+            <li><a href="#tabs-7" style="color:lightgray" class="headtabs">Seventh</a></li>
         </ul>
         <div id="tabs-1">
             <form>
-                <div id="colorset">
-                    <fieldset id="colormatching" style="background-color: white">
+                <div id="colorset">                                         <!--颜色设置-->
+                    <fieldset id="colormatching" class="fieldset-ui" style="background-color: white">
                         <legend class="title-style">配色</legend>
                         <input type="radio" id="radio2" name="radio"><label for="radio2" style="background:lightgrey">灰色</label>
                         <input type="radio" id="radio3" name="radio" checked="checked"><label for="radio3" style="background:#ED5565">粉色</label>
                         <input type="radio" id="radio4" name="radio"><label for="radio4" style="background:lightgreen">绿色</label>
                     </fieldset>
                 </div>
-                <div id="sizeset">
+                <div id="sizeset">                                          <!--字体设置-->
                     <fieldset id="sizesetting" style="background-color: white">
                         <legend class="title-style">字号</legend>
                         <select id="size" style="background:#ED5565">
@@ -145,8 +206,67 @@
                 </div>
             </form>
         </div>
-        <div id="tabs-2">2</div>
-        <div id="tabs-3">3</div>
+        <div id="tabs-2">
+            <form>
+                <div>
+                    <fieldset id="infoset" class="fieldset-ui">                                 <!--个人信息设置/-->
+                        <legend class="title-style">个人信息</legend>
+                        <div class="con4">                                   <!--头像/-->
+                            <canvas id="cvs" width="100" height="100"></canvas>
+
+                            <p class="btn upload">上传头像<input type="file" class="upload_pic" id="upload"/></p>
+                        </div>
+                        <div class="baseinfosetting">
+                            <p class="baseinfo">昵称：
+                                <input type="text" name="nickname" class="baseinfoinput">
+                            </p>
+                            <p class="baseinfo">生日:&nbsp&nbsp
+                                <input type="text" id="datepicker" name="birthdate" class="baseinfoinput">
+                            </p>
+                            <p class="baseinfo">喜好：
+                                <input type="text" id="habbits" name="habbits" class="baseinfoinput">
+                            </p>
+                            <p class="baseinfo">手机：
+                                <input type="text" id="phonenumber" name="phonenumber" class="baseinfoinput">
+                            </p>
+                            <p class="baseinfo">邮箱：
+                                <input type="text" id="email" name="email" class="baseinfoinput">
+                            </p>
+                            <p class="baseinfo">个性签名：
+                            </p>
+                            <textarea rows="3" cols="24" id="signature" class="baseinfoinput" placeholder="输入你的个性签名" ></textarea>
+                        </div>
+                    </fieldset>
+                </div>
+            </form>
+        </div>
+        <div id="tabs-3">
+            <form>
+                <div>
+                    <fieldset id="privacysetting" class="fieldset-ui">
+                        <legend class="title-style">隐私设置</legend>
+                        <div id="accordion">
+                            <h3>密码设置</h3>
+                            <div id="passwordset">
+                                <p>你设置了密码，请定期修改密码并申请密码保护</p>
+                                <button class="ui-button" onclick="">修改密码</button>
+                            </div>
+                            <h3>清除浏览数据</h3>
+                            <div>2</div>
+                            <h3>个性化体验</h3>
+                            <div>3</div>
+                        </div>
+                    </fieldset>
+                    <fieldset id="safetysetting" class="fieldset-ui">
+                        <legend class="title-style">安全设置</legend>
+                        <div>
+
+                        </div>
+                    </fieldset>
+                </div>
+            </form>
+
+        </div>
         <div id="tabs-4">4</div>
         <div id="tabs-5">5</div>
         <div id="tabs-6">6</div>
@@ -167,7 +287,56 @@
         $("#tabs").tabs();
         $("#colorset").buttonset();
         $("#size").selectmenu();
-    })
+        $("#datepicker").datepicker();
+        $("#accordion").accordion();
+    });
+
+    function opendialog(){
+
+    }
+</script>
+<script>                                                //上传头像js
+    //获取上传按钮
+    var input1 = document.getElementById("upload");
+    if(typeof FileReader === 'undefined') {
+        //result.innerHTML = "抱歉，你的浏览器不支持 FileReader";
+        input1.setAttribute('disabled', 'disabled');
+    } else {
+        input1.addEventListener('change', readFile, false);
+
+    }
+
+    function readFile() {
+        var file = this.files[0]; //获取上传文件列表中第一个文件
+        if(!/image\/\w+/.test(file.type)) {
+            //图片文件的type值为image/png或image/jpg
+            alert("文件必须为图片！");
+            return false;
+        }
+        // console.log(file);
+        var reader = new FileReader(); //实例一个文件对象
+        reader.readAsDataURL(file); //把上传的文件转换成url
+        //当文件读取成功便可以调取上传的接口
+        reader.onload = function(e) {
+
+            var image = new Image();
+            // 设置src属性
+            image.src = e.target.result;
+            var max = 200;
+            // 绑定load事件处理器，加载完成后执行，避免同步问题
+            image.onload = function() {
+                // 获取 canvas DOM 对象
+                var canvas = document.getElementById("cvs");
+                // 获取 canvas的 2d 环境对象,
+                var ctx = canvas.getContext("2d");
+                // canvas清屏
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                ctx.drawImage(image, 0, 0, 100, 100);
+
+            };
+        }
+    };
 </script>
 </body>
 
@@ -181,6 +350,13 @@
     function c(){
         $('dialog').css('display','none')
     }
+        $(".trigger1").click(function () {
+            $(".slider1").toggleClass("open");
+        });
+        $(".trigger2").click(function () {
+            $(".slider2").toggleClass("open");
+        });
+
 </script>
 
 </html>
