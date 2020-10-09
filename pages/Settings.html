@@ -111,6 +111,10 @@
             border-radius: 10px;
             border-color: #ED5565;
         }
+
+        #passwordset{
+            height: 100px;
+        }
     </style>
     <title>系统设置</title>
 </head>
@@ -239,9 +243,25 @@
         <div id="tabs-3">
             <form>
                 <div>
+                    <fieldset id="privacysetting" class="fieldset-ui">
+                        <legend class="title-style">隐私设置</legend>
+                        <div id="accordion">
+                            <h3>密码设置</h3>
+                            <div id="passwordset">
+                                <p>你设置了密码，请定期修改密码并申请密码保护</p>
+                                <button class="ui-button" onclick="">修改密码</button>
+                            </div>
+                            <h3>清除浏览数据</h3>
+                            <div>2</div>
+                            <h3>个性化体验</h3>
+                            <div>3</div>
+                        </div>
+                    </fieldset>
                     <fieldset id="safetysetting" class="fieldset-ui">
                         <legend class="title-style">安全设置</legend>
+                        <div>
 
+                        </div>
                     </fieldset>
                 </div>
             </form>
@@ -268,7 +288,12 @@
         $("#colorset").buttonset();
         $("#size").selectmenu();
         $("#datepicker").datepicker();
-    })
+        $("#accordion").accordion();
+    });
+
+    function opendialog(){
+
+    }
 </script>
 <script>                                                //上传头像js
     //获取上传按钮
