@@ -431,24 +431,7 @@ body {
     color:#333;
     background:#fff;
 }
-a:link, a:visited {
-    border-bottom:1px solid #c55500;
-    text-decoration:none;
-    color:#c55500;
-}
-a:visited {
-    border-bottom:1px solid #730800;
-    color:#730800;
-}
-a:hover, a:focus, a:active {
-    border:0;
-    color:#fff;
-    background:#c55500;
-}
-a:visited:hover, a:visited:focus, a:visited:active {
-    color:#fff;
-    background:#730800;
-}
+
 h2 {
     margin:0.5em 0 1.5em;
     font-size:1.25em;
