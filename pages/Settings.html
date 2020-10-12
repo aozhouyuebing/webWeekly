@@ -115,6 +115,12 @@
         #passwordset{
             height: 100px;
         }
+
+        .passwordtext{
+
+        }
+
+
     </style>
     <title>系统设置</title>
 </head>
@@ -126,7 +132,7 @@
     <a href="#"><b class="trigger1" >注册</b></a>
     <a href="#"><b class="trigger2">登陆</b></a>
 </nav>
-<div class="slider1">
+<!--<div class="slider1">
     <form>
         <p>用户名：<input type="text" class="gUserName" /></p>
         <p>密&nbsp;&nbsp;码&nbsp;&nbsp;：<input type="text" class="gPassWord" /></p>
@@ -152,7 +158,7 @@
             <button>提交</button>
         </div>
     </form>
-</div>
+</div> /-->
 <aside class="aside">
     <div id="jquery-accordion-menu" class="jquery-accordion-menu red">
         <div class="jquery-accordion-menu-header" id="form">
@@ -177,10 +183,6 @@
             <li><a href="#tabs-1" style="color:lightgray" class="headtabs">外观</a></li>
             <li><a href="#tabs-2" style="color:lightgray" class="headtabs">个人资料</a></li>
             <li><a href="#tabs-3" style="color:lightgray" class="headtabs">安全</a></li>
-            <li><a href="#tabs-4" style="color:lightgray" class="headtabs">Forth</a></li>
-            <li><a href="#tabs-5" style="color:lightgray" class="headtabs">Fifth</a></li>
-            <li><a href="#tabs-6" style="color:lightgray" class="headtabs">Sixth</a></li>
-            <li><a href="#tabs-7" style="color:lightgray" class="headtabs">Seventh</a></li>
         </ul>
         <div id="tabs-1">
             <form>
@@ -246,15 +248,40 @@
                     <fieldset id="privacysetting" class="fieldset-ui">
                         <legend class="title-style">隐私设置</legend>
                         <div id="accordion">
-                            <h3>密码设置</h3>
-                            <div id="passwordset">
-                                <p>你设置了密码，请定期修改密码并申请密码保护</p>
-                                <button class="ui-button" onclick="">修改密码</button>
+                            <h3 style="background-color: #DA4453">密码设置</h3>
+                            <div id="passwordset" style="background-color: #ED5565">
+                                <p style="color: white">你设置了密码，请定期修改密码并申请密码保护</p>
+                                <button class="ui-button" id="passwordchange" onclick="opendialog1()" style="color: white;background-color: lightcoral">修改密码</button>
+                                <div id="passwordsetdialog" title="修改密码" >
+                                    <p class="passwordtext">原密码：</p>
+                                    <input type="text" id="originpassword" name="originpassword">
+                                    <p class="passwordtext">新密码：</p>
+                                    <input type="password" id="newpassword" name="newpassword">
+                                    <p class="passwordtext">确认密码：</p>
+                                    <input type="password" id="confirmpassword" name="confirmpassword">
+                                </div>
                             </div>
-                            <h3>清除浏览数据</h3>
-                            <div>2</div>
-                            <h3>个性化体验</h3>
-                            <div>3</div>
+                            <h3 style="background-color: #DA4453">清除浏览数据</h3>
+                            <div style="background-color: #ED5565">
+                                <p style="color: white">清除浏览数据（清除浏览记录、Cookie、缓存及其他数据</p>
+                                <button id="cleanhistory" class="ui-button" onclick="opendialog2()" style="color: white;background-color: lightcoral">清除</button>
+                                <div id="cleanhistorydialog" title="清除浏览数据">
+                                    <select id="timearound">
+                                        <option selected="selected">过去一小时</option>
+                                        <option>过去24小时</option>
+                                        <option>过去7天</option>
+                                        <option>时间不限</option>
+                                    </select>
+                                    <br>
+                                    <input type="checkbox" id="cleanradio1" name="history" checked="checked"><label for="cleanradio1">浏览记录</label>
+                                    <br>
+                                    <input type="checkbox" id="cleanradio2" name="pic"><label for="cleanradio2" >缓存的图片和文件 </label>
+                                    <br>
+                                    <input type="checkbox" id="cleanradio3" name="account"><label for="cleanradio3" >保存的账号密码 </label>
+                                </div>
+                            </div>
+                            <h3 style="background-color: #DA4453">个性化体验</h3>
+                            <div style="background-color: #ED5565">3</div>
                         </div>
                     </fieldset>
                     <fieldset id="safetysetting" class="fieldset-ui">
@@ -267,10 +294,7 @@
             </form>
 
         </div>
-        <div id="tabs-4">4</div>
-        <div id="tabs-5">5</div>
-        <div id="tabs-6">6</div>
-        <div id="tabs-7">7</div>
+
     </div>
 </main>
 <footer class="footer">
@@ -287,12 +311,41 @@
         $("#tabs").tabs();
         $("#colorset").buttonset();
         $("#size").selectmenu();
+
         $("#datepicker").datepicker();
         $("#accordion").accordion();
+        $("#passwordsetdialog, #cleanhistorydialog" ).dialog({
+            autoOpen: false,
+            width: 400,
+            buttons: [
+                {
+                    text: "Ok",
+                    click: function() {
+                        $( this ).dialog( "close" );
+                    }
+                },
+                {
+                    text: "Cancel",
+                    click: function() {
+                        $( this ).dialog( "close" );
+                    }
+                }
+            ]
+        });
+        $("#passwordchange, #cleanhistory").click(function(e){
+            e.preventDefault();
+        });
+
     });
 
-    function opendialog(){
+    function opendialog1(event){
+        $("#passwordsetdialog").dialog("open");
+        event.preventDefault();
+    }
 
+    function opendialog2(event){
+        $("#cleanhistorydialog").dialog("open");
+        event.preventDefault();
     }
 </script>
 <script>                                                //上传头像js
