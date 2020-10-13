@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="witdh='device-witdh,initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="../layui/css/layui.css" />
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="../layui/layui.js"></script>
+    <title>girlRent</title>
+
+    <style type="text/css">
+        body{
+            background-color: #ED5565;
+        }
+        main{
+            background-color: #ED5565;
+        }
+        #accordion{
+            margin-left: 50px;
+
+        }
+        .a-text{
+            background-color: #DA4453;
+        }
+        #accordion p{
+            background-color: #00F7DE;
+        }
+        .main{
+            margin-left: 150px;
+            width: 900px;
+            height: 600px;
+            background-color: #DA4453;
+            text-align: center;
+        }
+        .aside{
+            background-color: #ED5565;
+        }
+
+    </style>
+</head>
+
+<body>
+<nav class="nav">
+    <a href="index.html"><b onclick="()=>{sessionStorage.clear()}">主页</b></a>
+    <a href="https://www.mylcz.top"><b>相关连接</b></a>
+    <a href="#"><b class="trigger1" >注册</b></a>
+    <a href="#"><b class="trigger2">登陆</b></a>
+</nav>
+<div class="slider1">
+    <form>
+        <p>用户名：<input type="text" class="gUserName" /></p>
+        <p>密&nbsp;&nbsp;码&nbsp;&nbsp;：<input type="text" class="gPassWord" /></p>
+        <p>年龄层：<select id="gAge">
+            <option  value ="14<">14岁<</option>
+            <option value ="14~18">14~18岁</option>
+            <option value ="18~22" selected="selected">18~22岁</option>
+            <option value =">22">>22岁</option>
+        </select>
+        </p>
+        <div style="float: right;">
+            <button onclick="c()">取消</button>
+            <button>提交</button>
+        </div>
+    </form>
+</div>
+<div class="slider2">
+    <form>
+        <p>用户名：<input id="lUserName"/></p>
+        <p>密&nbsp;&nbsp;码&nbsp;&nbsp;：<input id="lPassWord"/></p>
+        <div style="float: right;">
+            <button onclick="c()">取消</button>
+            <button>提交</button>
+        </div>
+    </form>
+</div>
+<aside class="aside">
+    <div id="jquery-accordion-menu" class="jquery-accordion-menu red">
+        <div class="jquery-accordion-menu-header" id="form">
+            功能再想想
+        </div>
+        <ul id="demo-list">
+            <li ><a href="index.html"><i class="fa fa-home"></i>主页 </a></li>
+            <li ><a href="#"><i class="fa fa-file-image-o"></i>心情贴 </a></li>
+            <li><a href="#"><i class="fa fa-tag"></i>借物帖 </a></li>
+            <li><a href="#"><i class="fa fa-bars"></i>租借汇总 </a></li>
+            <li><a href="#"><i class="fa fa-thumbs-up"></i>借物归还 </a></li>
+            <li class="active"><a href="#"><i class="fa fa fa-female"></i>租借女友 <span class="jquery-accordion-menu-label">
+				 ・ω・</span></a></li>
+            <li><a href="#"><i class="fa fa-user"></i>用户信息 </a></li>
+            <li><a href="#"><i class="fa fa-envelope"></i>收件箱 </a></li>
+            <li><a href="./pages/Settings.html"><i class="fa fa-cog"></i>系统设置 </a></li>
+        </ul>
+    </div>
+</aside>
+<main>
+<!--    <div id="accordion">-->
+<!--        <h3 class="a-text">我是租客</h3>-->
+<!--        <div class="renterModel">-->
+<!--            <div class="innerText">-->
+<!--                <p>-->
+<!--                    这里有性格和姿态各异的定制租借女友<br>-->
+<!--                    只要付出一点点金钱便可租借一位女友一定时间<br>-->
+<!--                    该时间内行程计划甚至女友的性格和行为方式均可定制！-->
+<!--                </p>-->
+<!--                <button type="button" class="bt1">点我进入租借界面</button>-->
+<!--            </div>-->
+
+<!--        </div>-->
+<!--        <h3 class="a-text">我是女友</h3>-->
+<!--        <div>-->
+<!--            <p>-->
+<!--                付出时间，获取报酬，各持所需-->
+<!--            </p>-->
+<!--            <button type="button">点我进入女友界面</button>-->
+<!--        </div>-->
+<!--    </div>-->
+    <div class="main">
+        <div class="layui-row">
+            <div class="layui-col-md6">
+                <div class="layui-card">
+                    <div class="layui-card-header">卡片面板</div>
+                    <div class="layui-card-body">
+                        卡片式面板面板通常用于非白色背景色的主体内<br>
+                        从而映衬出边框投影<br>
+                        <button class="layui-btn layui-btn-normal" id="test">点我</button>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-md6">
+                <div class="layui-card">
+                    <div class="layui-card-header">卡片面板</div>
+                    <div class="layui-card-body">
+                        卡片式面板面板通常用于非白色背景色的主体内<br>
+                        从而映衬出边框投影
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+</main>
+<footer class="footer">
+    <p>
+        小组成员：竺雨石 &nbsp; &nbsp;邹秦峰&nbsp; &nbsp;夏尔泉&nbsp; &nbsp;<br/>
+        王昊阳&nbsp; &nbsp;严巍&nbsp; &nbsp;刘嘉龙&nbsp; &nbsp;胡天力&nbsp; &nbsp;么逸璐
+    </p>
+</footer>
+<script src="../js/index.js"></script>
+<script src="../js/jquery-ui.js"></script>
+</body>
+<script>
+    layui.use('layer', function(){
+        var layer = layui.layer;
+
+        layer.msg('hello');
+    });
+</script>
+
+</html>
