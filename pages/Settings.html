@@ -281,13 +281,26 @@
                                 </div>
                             </div>
                             <h3 style="background-color: #DA4453">个性化体验</h3>
-                            <div style="background-color: #ED5565">3</div>
+                            <div style="background-color: #ED5565">
+                                <div id="experience">
+                                    <p style="color: white">是否开启个性化体验（可能包含推送广告）</p>
+                                    <input type="radio" id="yes" name="experienceads"><label for="yes" style="background:#ED5565">是</label>
+                                    <input type="radio" id="no" name="experienceads"><label for="no" style="background:#ED5565">否</label>
+                                </div>
+                            </div>
                         </div>
                     </fieldset>
                     <fieldset id="safetysetting" class="fieldset-ui">
                         <legend class="title-style">安全设置</legend>
-                        <div>
-
+                        <div id="accountspassword" style="display: block">
+                            <p style="color: white">是否记住账号密码</p>
+                            <input type="radio"  name="accounts" id="accounts1"><label for="accounts1" style="background:#ED5565">是</label>
+                            <input type="radio"  name="accounts" id="accounts2"><label for="accounts2" style="background:#ED5565">否</label>
+                        </div>
+                        <div id="anonymous">
+                            <p style="color: white">是否匿名访问</p>
+                            <input type="radio"  name="anonymousset" id="anonymousset1"><label for="anonymousset1" style="background:#ED5565">是</label>
+                            <input type="radio"  name="anonymousset" id="anonymousset2"><label for="anonymousset2" style="background:#ED5565">否</label>
                         </div>
                     </fieldset>
                 </div>
@@ -309,9 +322,9 @@
 <script type="text/javascript">
     $(document).ready(function(){
         $("#tabs").tabs();
-        $("#colorset").buttonset();
+        $("#colorset, #experience, #anonymous, #accountspassword").buttonset();
+        $("#experience").buttonset();
         $("#size").selectmenu();
-
         $("#datepicker").datepicker();
         $("#accordion").accordion();
         $("#passwordsetdialog, #cleanhistorydialog" ).dialog({
