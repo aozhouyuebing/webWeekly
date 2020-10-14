@@ -137,38 +137,33 @@
                         <button class="layui-btn layui-btn-warm" id="becomeRenter" style="margin-top: 10px">点我成为租客</button>
                     </div>
                     <div class="layui-card" id="rentForm" style="display: none">
-                        <form class="layui-form" action=""  style="background-color:#5FB878; width:450px;height: 500px;color: #362b36;text-align: center;padding-top: 30px;">
+                        <form class="layui-form" action=""  style="background-color:#fc9d9a; width:450px;height: 500px;color: #362b36;padding-top: 30px;">
                             <div class="layui-form-item">
                                 <label class="layui-form-label">用户名</label>
                                 <div class="layui-input-block" style="width: 200px">
                                     <input type="text" name="title" required  lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
                                 </div>
                             </div>
-                            <div class="layui-form-item">
-                                <label class="layui-form-label">aa</label>
-                                <input type="radio" name="aa" value="aa">
-                                <input type="radio" name="aa" value="sda">
-                            </div>
-                            <div class="layui-form-item">
-                                <label class="layui-form-label">aa</label>
-                                <select value="">
-                                    <option selected>sad</option>
-                                    <option>dsa</option>
-                                </select>
-                            </div>
+<!--                            <div class="layui-form-item">-->
+<!--                                <label class="layui-form-label">aa</label>-->
+<!--                                <input type="radio" name="aa" value="aa">-->
+<!--                                <input type="radio" name="aa" value="sda">-->
+<!--                            </div>-->
+
+
                             <div class="layui-form-item">
                                 <label class="layui-form-label">密码框</label>
                                 <div class="layui-input-inline" style="width: 200px">
                                     <input type="password" name="password" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
                                 </div>
-                                <div class="layui-form-mid layui-word-aux">请输入注册密码</div>
+                                <div class="layui-form-mid">请输入注册密码</div>
                             </div>
                             <div class="layui-form-item">
                                 <label class="layui-form-label">确认密码</label>
                                 <div class="layui-input-inline" style="width: 200px">
                                     <input type="password" name="password" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
                                 </div>
-                                <div class="layui-form-mid layui-word-aux">请再次输入密码</div>
+                                <div class="layui-form-mid">请再次输入密码</div>
                             </div>
 
                             <div class="layui-form-item">
@@ -179,6 +174,27 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="layui-col-md4 layui-col-md-offset3" >
+                                <div class="layui-form-item">
+
+                                    <select value="">
+                                        <option selected>请选择所在地区</option>
+                                        <option>杭州</option>
+                                        <option>北京</option>
+                                        <option>上海</option>
+                                        <option>广州</option>
+                                        <option>苏州</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">租赁喜好</label>
+                                <div class="layui-input-block" align="left">
+                                    <input type="radio" name="sex" value="男" title="男" checked>
+                                    <input type="radio" name="sex" value="女" title="女">
+
+                                </div>
+                            </div>
 
                             <div class="layui-form-item layui-form-text">
                                 <label class="layui-form-label">自我描述</label>
@@ -187,9 +203,10 @@
                                 </div>
                             </div>
                             <div class="layui-form-item">
-                                <div class="layui-input-block">
-                                    <button class="layui-btn" lay-submit lay-filter="formDemo" style="position: center;">点我提交成为租客</button>
-                                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                                <div class="layui-input-block" style="margin-right: 30px;" >
+                                    <button class="layui-btn layui-btn-normal" id="backRenter" onclick="backRent()">返回</button>
+                                    <button class="layui-btn" lay-submit lay-filter="formDemo">点我提交成为租客</button>
+                                    <button type="reset" class="layui-btn layui-btn-warm">重置</button>
                                 </div>
                             </div>
                         </form>
@@ -242,6 +259,20 @@
                                     </div>
                                 </div>
 
+                                <div class="layui-col-md4 layui-col-md-offset3" >
+                                    <div class="layui-form-item">
+
+                                        <select value="">
+                                            <option selected>请选择所在地区</option>
+                                            <option>杭州</option>
+                                            <option>北京</option>
+                                            <option>上海</option>
+                                            <option>广州</option>
+                                            <option>苏州</option>
+                                        </select>
+                                    </div>
+                                </div>
+
                                 <div class="layui-form-item layui-form-text">
                                     <label class="layui-form-label">自我介绍</label>
                                     <div class="layui-input-block">
@@ -249,9 +280,10 @@
                                     </div>
                                 </div>
                                 <div class="layui-form-item">
-                                    <div class="layui-input-block">
-                                        <button class="layui-btn" lay-submit lay-filter="formDemo" style="position: center;">点我提交成为女友</button>
-                                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                                    <div class="layui-input-block" style="margin-right: 30px;">
+                                        <button class="layui-btn layui-btn-normal" id="backGirl1" onclick="backGirl()">返回</button>
+                                        <button class="layui-btn" lay-submit lay-filter="formDemo">点我提交成为女友</button>
+                                        <button type="reset" class="layui-btn layui-btn-warm">重置</button>
                                     </div>
                                 </div>
                             </form>
@@ -295,6 +327,15 @@
         var form = layui.form;
         form.render();
     });
+    function backRent() {
+       $("#rentForm").hide("slide");
+       $("#renterDiv").show("slide");
+    }
+
+    function backGirl(){
+       $("#girlForm").hide("slide");
+       $("#girlDiv").show("slide");
+    }
 </script>
 
 </html>
