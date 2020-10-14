@@ -1,0 +1,111 @@
+body{
+    background:  #ED5565
+}
+.button-color {
+    style: "width: 240px;height: 30px";
+    width: 245px;
+    height: 40px;
+    color: white;
+    background-color: #99a1a7;
+    border-radius: 3px;
+    border-width: 0;
+    margin: 0;
+    outline: none;
+    font-family: KaiTi;
+    font-size: 17px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.button-color:hover {
+    background-color: #Da4453;
+}
+
+fieldset {
+    float: none;
+    background-color: #fafafa;
+}
+.table-size{
+    background-color: #e4f1fb;
+}
+
+.button-holder {
+    width: 100%;
+    font-family: KaiTi;
+    font-size: 17px;
+    margin: 0 auto;
+    float: none;
+}
+
+.regular-radio {
+    display: none;
+}
+
+.regular-radio + label {
+    -webkit-appearance: none;
+    background-color: #fafafa;
+    border: 1px solid #cacece;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0 -15px 10px -12px rgba(0, 0, 0, 0.05);
+    padding: 9px;
+    border-radius: 50px;
+    display: inline-block;
+    position: relative;
+}
+
+.regular-radio:checked + label:after {
+    content: ' ';
+    width: 12px;
+    height: 12px;
+    border-radius: 50px;
+    position: absolute;
+    top: 3px;
+    background: #99a1a7;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+    text-shadow: #cacece;
+    left: 3px;
+    font-size: 32px;
+}
+
+.Size {
+    border: 1px solid #ccc;
+    padding: 7px 0;
+    border-radius: 3px;
+    padding-left: 5px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s
+}
+
+.Size:focus {
+    border-color: #66afe9;
+    outline: 0;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6)
+}
+
+#text-area {
+    width: 245px;
+    border: 1px solid #DDD;
+    resize: none;
+}
+
+#text-area2 {
+    width: 245px;
+
+    border: 1px solid #DDD;
+    resize: none;
+}
+
+hh {
+    font-family: KaiTi;
+    font-size: 15px;
+}
+
+.img-size {
+    width: 150px;
+    height: 150px;
+}
+
+img {
+    position: absolute;
+    top: 47.5vh;
+    right: 42vw;
+}

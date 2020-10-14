@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="witdh='device-witdh,initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="../css/jquery-ui.css"/>
+    <style>
+        body{background-color: #ED5565;}
+        button{
+            width: 250px;
+            height:30px;
+            color:white;
+            font-size: 15px;
+            font-weight: bold;
+            background-color:cornflowerblue;
+            border-radius: 3px;
+            border-width: 0;
+            margin: 0;
+            outline: none;
+            text-align: center;
+            cursor: pointer;
+        }
+    </style>
+    <title>用户信息</title>
+</head>
+
+<body>
+<nav class="nav">
+    <a href=""><b onclick="()=>{sessionStorage.clear()}">主页</b></a>
+    <a href="https://www.mylcz.top"><b>相关连接</b></a>
+    <a href="#"><b onclick="a()">注册</b></a>
+    <a href="#"><b onclick="b()">登陆</b></a>
+</nav>
+<dialog id='dialog1' style="display: none" >
+    <form>
+        <p>用户名：<input type="text" id="create_name" /></p>
+        <p>密&nbsp;&nbsp;码&nbsp;&nbsp;：<input type="text" id="create_author" /></p>
+        <p>年龄层：<select id="create_type">
+            <option  value ="14<">14岁<</option>
+            <option value ="14~18">14~18岁</option>
+            <option value ="18~22" selected="selected">18~22岁</option>
+            <option value =">22">>22岁</option>
+        </select>
+        </p>
+        <div style="float: right;">
+            <button onclick="c()">取消</button>
+            <button>提交</button>
+        </div>
+    </form>
+</dialog>
+<dialog id='dialog2' style="display: none" >
+    <form>
+        <p>用户名：<input type="text"/></p>
+        <p>密&nbsp;&nbsp;码&nbsp;&nbsp;：<input type="text"/></p>
+        <div style="float: right;">
+            <button onclick="c()">取消</button>
+            <button>提交</button>
+        </div>
+    </form>
+</dialog>
+<aside class="aside">
+    <div id="jquery-accordion-menu" class="jquery-accordion-menu red">
+        <div class="jquery-accordion-menu-header" id="form">
+            功能再想想
+        </div>
+        <ul id="demo-list">
+            <li><a href="#"><i class="fa fa-home"></i>主页 </a></li>
+            <li><a href="#"><i class="fa fa-file-image-o"></i>心情贴 </a></li>
+            <li><a href="#"><i class="fa fa-tag"></i>借物帖 </a></li>
+            <li><a href="#"><i class="fa fa-bars"></i>租借汇总 </a></li>
+            <li><a href="#"><i class="fa fa fa-female"></i>租借女友 <span class="jquery-accordion-menu-label">
+				 ・ω・</span></a></li>
+            <li class="active"><a href="#"><i class="fa fa-user"></i>用户信息 </a></li>
+            <li><a href="#"><i class="fa fa-envelope"></i>收件箱 </a></li>
+            <li ><a href="#"><i class="fa fa-cog"></i>系统设置 </a></li>
+        </ul>
+    </div>
+</aside>
+<main>
+    <div id="container" style="height:1000px;width:1400px">
+        <div id="header" style="height:50px;width:1400px;">
+            <h1 align="center">用户信息</h1>
+        </div>
+        <div id="image" style="height:40px;width:150px;float:left;text-align:center;font-size:20px;" >
+            <b>头像:</b>
+        </div>
+        <div id="0" style="height:40px;width:1200px" >
+        </div>
+        <div id="image1" >
+            <img src="../img/1.jpg" height="125" width="125">
+        </div>
+        <div id="nicname" style="height:50px;width:150px;float:left;text-align:center;font-size:20px;" >
+            <b>用户名:</b>
+        </div>
+        <div id="nicname1" style="height:50px;width:550px;float:left;font-size:20px;">
+            星神白夜
+        </div>
+        <div id="realname" style="height:50px;width:150px;float:left;text-align:center;font-size:20px;" >
+            <b>真实姓名:</b>
+        </div>
+        <div id="realname1" style="height:50px;width:550px;float:left;font-size:20px;">
+            王**（已隐藏）
+        </div>
+        <div id="born" style="height:50px;width:150px;float:left;text-align:center;font-size:20px;" >
+            <b>出生日期:</b>
+        </div>
+        <div id="born1" style="height:50px;width:550px;float:left;font-size:20px;">
+            2000-6-9
+        </div>
+        <div id="age" style="height:50px;width:150px;float:left;text-align:center;font-size:20px;" >
+            <b>年龄:</b>
+        </div>
+        <div id="age1" style="height:50px;width:550px;float:left;font-size:20px;">
+            20
+        </div>
+        <div id="date" style="height:50px;width:150px;float:left;text-align:center;font-size:20px;" >
+            <b>注册时间:</b>
+        </div>
+        <div id="date1" style="height:50px;width:550px;float:left;font-size:20px;">
+            2020-1-1
+        </div>
+        <div id="sex" style="height:50px;width:150px;float:left;text-align:center;font-size:20px;" >
+            <b>性别:</b>
+        </div>
+        <div id="sex1" style="height:50px;width:550px;float:left;font-size:20px;">
+            他
+        </div>
+        <div id="mailbox" style="height:50px;width:150px;float:left;text-align:center;font-size:20px;" >
+            <b>常用邮箱:</b>
+        </div>
+        <div id="mailbox1" style="height:50px;width:550px;float:left;font-size:20px;">
+            ganmsoxse8283@gmail.com
+        </div>
+        <div id="phone" style="height:50px;width:150px;float:left;text-align:center;font-size:20px;" >
+            <b>电话号码:</b>
+        </div>
+        <div id="phone1" style="height:50px;width:550px;float:left;font-size:20px;">
+            137****9610
+        </div>
+        <div id="sign" style="height:50px;width:150px;float:left;text-align:center;font-size:20px;" >
+            <b>个性签名:</b>
+        </div>
+        <div id="sign1" style="height:50px;width:1250px;float:left;font-size:20px;">
+            爷，就似辣么帅。
+        </div>
+        <div>
+            <button>修改</button>
+        </div>
+    </div>
+</main>
+<footer class="footer">
+    <p>
+        小组成员：竺雨石 &nbsp; &nbsp;邹秦峰&nbsp; &nbsp;夏尔泉&nbsp; &nbsp;<br/>
+        王昊阳&nbsp; &nbsp;严巍&nbsp; &nbsp;刘嘉龙&nbsp; &nbsp;胡天力&nbsp; &nbsp;么逸璐
+    </p>
+</footer>
+<script src="../js/index.js"></script>
+<script src="../js/jquery-3.4.1.min.js"></script>
+<script src="../js/jquery-ui.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#tabs").tabs();
+        $("#colorset").buttonset();
+        $("#size").selectmenu();
+    })
+</script>
+</body>
+
+<script>
+</script>
+
+</html>
