@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="witdh='device-witdh,initial-scale=1.0">
+<!--    <meta name="viewport" content="witdh='device-witdh,initial-scale=1.0">-->
     <link rel="stylesheet" type="text/css" href="../css/main.css">
     <link rel="stylesheet" type="text/css" href="../css/font-awesome.css" />
     <link rel="stylesheet" type="text/css" href="../layui/css/layui.css" />
@@ -17,13 +17,6 @@
         main{
             background-color: #ED5565;
         }
-        #accordion{
-            margin-left: 50px;
-
-        }
-        .a-text{
-            background-color: #DA4453;
-        }
         #accordion p{
             background-color: #00F7DE;
         }
@@ -36,6 +29,19 @@
         }
         .aside{
             background-color: #ED5565;
+        }
+        .layui-card{
+
+            font-family:Arial,Helvetica,sans-serif;
+            font-size:1em;
+            vertical-align:middle;
+            font-weight:normal
+
+
+
+            font-size: 20px;
+            color: #ffef8f;
+            background-color: #DA4453;
         }
 
     </style>
@@ -119,21 +125,126 @@
     <div class="main">
         <div class="layui-row">
             <div class="layui-col-md6">
-                <div class="layui-card">
-                    <div class="layui-card-header">卡片面板</div>
-                    <div class="layui-card-body">
-                        卡片式面板面板通常用于非白色背景色的主体内<br>
-                        从而映衬出边框投影<br>
-                        <button class="layui-btn layui-btn-normal" id="test">点我</button>
+                <div class="layui-card" >
+                    <div class="layui-card-header" style="color: #ffef8f">成为租客</div>
+                    <div class="layui-card-body" id="renterDiv">
+                        这里有性格和姿态各异的定制租借女友<br>
+                        只要付出一点点金钱便可租借一位女友一定时间<br>
+                        专属租借女友的个性化服务<br>
+                        可定制化的约会行程<br/>
+                        还在等什么，快来尝试吧
+                        <img src="../img/zqf/girl01.jpg" width="400px" height="330px">
+                        <button class="layui-btn layui-btn-warm" id="becomeRenter" style="margin-top: 10px">点我成为租客</button>
+                    </div>
+                    <div class="layui-card" id="rentForm" style="display: none">
+                        <form class="layui-form" action=""  style="background-color:#5FB878; width:450px;height: 500px;color: #362b36;text-align: center;padding-top: 30px;">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">用户名</label>
+                                <div class="layui-input-block" style="width: 200px">
+                                    <input type="text" name="title" required  lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">密码框</label>
+                                <div class="layui-input-inline" style="width: 200px">
+                                    <input type="password" name="password" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+                                </div>
+                                <div class="layui-form-mid layui-word-aux">请输入注册密码</div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">确认密码</label>
+                                <div class="layui-input-inline" style="width: 200px">
+                                    <input type="password" name="password" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+                                </div>
+                                <div class="layui-form-mid layui-word-aux">请再次输入密码</div>
+                            </div>
+
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">输入邮箱</label>
+                                <div class="layui-input-block">
+                                    <div class="layui-input-inline" style="width: 200px">
+                                        <input type="email" name="email" lay-verify="required" placeholder="请输入邮箱" autocomplete="off" class="layui-input">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="layui-form-item layui-form-text">
+                                <label class="layui-form-label">自我描述</label>
+                                <div class="layui-input-block">
+                                    <textarea name="desc" placeholder="请在此处输入你的自我描述和对女孩子们的需求吧~~~" class="layui-textarea" style="width: 300px;"></textarea>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-input-block">
+                                    <button class="layui-btn" lay-submit lay-filter="formDemo" style="position: center;">点我提交成为租客</button>
+                                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
+
             </div>
             <div class="layui-col-md6">
                 <div class="layui-card">
-                    <div class="layui-card-header">卡片面板</div>
-                    <div class="layui-card-body">
-                        卡片式面板面板通常用于非白色背景色的主体内<br>
-                        从而映衬出边框投影
+                    <div class="layui-card-header" style="color: #ffef8f">成为女友</div>
+                    <div class="layui-card-body" id="girlDiv">
+                        个性的你是否有大把的时间却不知道如何处理？<br>
+                        这里为具有不同个性特点的女生们提供了成为租借女友的平台<br>
+                        这里有一个完备的女友保护制度<br>
+                        有一套完善的租借规则和评分规则<br>
+                        有着可定制化的价格和行程安排，快来注册成为租借女友吧
+                        <img src="../img/4.jpg" width="400px" height="330px">
+                        <button class="layui-btn layui-btn-warm" id="becomeGirl" style="margin-top: 10px">点我成为女友</button>
+                    </div>
+                    <div class="layui-card" id="girlForm" style="display: none">
+                        <div id="girlEffect" class="ui-widget-content ui-corner-all">
+                            <form class="layui-form" action=""  style="background-color:#d8b49c; width:450px;height: 500px;color: #362b36;text-align: center;padding-top: 30px;">
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">女艺名</label>
+                                    <div class="layui-input-block" style="width: 200px">
+                                        <input type="text" name="title" required  lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">密码框</label>
+                                    <div class="layui-input-inline" style="width: 200px">
+                                        <input type="password" name="password" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+                                    </div>
+                                    <div class="layui-form-mid layui-word-aux">请输入注册密码</div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">确认密码</label>
+                                    <div class="layui-input-inline" style="width: 200px">
+                                        <input type="password" name="password" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+                                    </div>
+                                    <div class="layui-form-mid layui-word-aux">请再次输入密码</div>
+                                </div>
+
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">输入邮箱</label>
+                                    <div class="layui-input-block">
+                                        <div class="layui-input-inline" style="width: 200px">
+                                            <input type="email" name="email" lay-verify="required" placeholder="请输入邮箱" autocomplete="off" class="layui-input">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="layui-form-item layui-form-text">
+                                    <label class="layui-form-label">自我介绍</label>
+                                    <div class="layui-input-block">
+                                        <textarea name="desc" placeholder="来一段彰显个性的自我介绍吧~~" class="layui-textarea" style="width: 300px;"></textarea>
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <div class="layui-input-block">
+                                        <button class="layui-btn" lay-submit lay-filter="formDemo" style="position: center;">点我提交成为女友</button>
+                                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -157,7 +268,16 @@
     layui.use('layer', function(){
         var layer = layui.layer;
 
-        layer.msg('hello');
+        layer.msg('欢迎来到租借女友界面，在该界面你可以选择----成为租客Or成为女友');
+    });
+    $("#becomeRenter").click(function () {
+        $("#renterDiv").hide("slide");
+        $("#rentForm").css("display","block");
+    });
+    $("#becomeGirl").click(function () {
+        $("#girlDiv").hide("slide");
+        $("#girlForm").css("display","block");
+        $("#girlEffect").show("slide");
     });
 </script>
 
