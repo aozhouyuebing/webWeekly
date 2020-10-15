@@ -4,11 +4,11 @@ window.onload = function () {
     var btn2 = document.getElementById("btn2");
     btn.onclick = function () {
         alert("发送请求已被接收，请耐心等待相关产品持有者与您沟通！");
-        window.location.href = "http://www.baidu.com/";
+        window.location.href = location.href;
     }
     btn2.onclick = function () {
         alert("您的信息已经发送到闲置物品处理中心，请等待他人前来租赁！");
-        window.location.href = "http://www.hao123.com/";
+        window.location.href = location.href;
     }
     var oY1 = document.getElementById("year1");
     var oM1 = document.getElementById("month1");
